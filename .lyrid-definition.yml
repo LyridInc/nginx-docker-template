@@ -1,0 +1,17 @@
+name: docker
+description: App Description
+ignoreFiles: .git
+operator: true
+modules:
+  - name: template
+    language: docker
+    description: Module description
+    volumes:
+      - alias: volume
+        mountPath: /var/www/html
+    ports:
+      - alias: http
+        portNumber: 8081
+    functions:
+      - name: entry
+        description: the entry point for the function
