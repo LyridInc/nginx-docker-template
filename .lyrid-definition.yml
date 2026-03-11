@@ -1,11 +1,13 @@
 name: docker
 description: App Description
 ignoreFiles: .git
-operator: true
 modules:
   - name: template
     language: docker
     description: Module description
+    volumes:
+      - alias: volume
+        mountPath: /var/www/html
     ports:
       - alias: http
         portNumber: 80
